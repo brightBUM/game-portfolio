@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
+import assetPath from "../../utils/assetPath";
 
 const heroVideos = [
     "/projects/slunkey/hero.mp4",
@@ -14,7 +15,6 @@ const heroVideos = [
 
 function Hero() {
     const videoRef = useRef(null);
-
     const [currentVideo, setCurrentVideo] = useState(0);
 
     useEffect(() => {
@@ -31,13 +31,11 @@ function Hero() {
         if (!videoRef.current) return;
 
         videoRef.current.currentTime = 0;
-
         videoRef.current.play().catch(() => {});
     }, [currentVideo]);
 
     return (
         <section className="hero">
-
             <video
                 ref={videoRef}
                 className="hero-video"
@@ -47,25 +45,18 @@ function Hero() {
                 playsInline
             >
                 <source
-                    src={heroVideos[currentVideo]}
+                    src={assetPath(heroVideos[currentVideo])}
                 />
             </video>
 
             <div className="hero-overlay"></div>
 
             <div className="hero-content">
+                <p className="hero-small">👋 Hi, I'm</p>
 
-                <p className="hero-small">
-                    👋 Hi, I'm
-                </p>
+                <h1>Ram Manohar</h1>
 
-                <h1>
-                    Ram Manohar
-                </h1>
-
-                <h2>
-                    Gameplay Programmer
-                </h2>
+                <h2>Gameplay Programmer</h2>
 
                 <p className="hero-description">
                     I build polished gameplay systems,
@@ -74,7 +65,6 @@ function Hero() {
                 </p>
 
                 <div className="hero-buttons">
-
                     <a href="#commercial">
                         <button className="primary-btn">
                             View Projects
@@ -82,7 +72,9 @@ function Hero() {
                     </a>
 
                     <a
-                        href="/resume/Ram_Manohar_Resume.pdf"
+                        href={assetPath(
+                            "/resume/Ram_Manohar_Resume.pdf"
+                        )}
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -90,11 +82,8 @@ function Hero() {
                             Resume
                         </button>
                     </a>
-
                 </div>
-
             </div>
-
         </section>
     );
 }

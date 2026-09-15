@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import "./ProjectCard.css";
+import assetPath from "../../utils/assetPath";
 
 function ProjectCard({ project }) {
     const videoRef = useRef(null);
@@ -36,14 +37,14 @@ function ProjectCard({ project }) {
         >
             <div className="project-media">
                 <img
-                    src={project.image}
+                    src={assetPath(project.image)}
                     alt={project.title}
                 />
 
                 {project.video && (
                     <video
                         ref={videoRef}
-                        src={project.video}
+                        src={assetPath(project.video)}
                         muted
                         loop
                         playsInline

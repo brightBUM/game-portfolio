@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import projects from "../data/projects";
+import assetPath from "../utils/assetPath";
 import "./ProjectDetails.css";
 
 function isVideo(file) {
@@ -248,7 +249,7 @@ function ProjectDetails() {
 
                 {project.video ? (
                     <video
-                        src={project.video}
+                        src={assetPath(project.video)}
                         autoPlay
                         muted
                         loop
@@ -256,7 +257,7 @@ function ProjectDetails() {
                     />
                 ) : (
                     <img
-                        src={project.image}
+                        src={assetPath(project.image)}
                         alt={project.title}
                     />
                 )}
@@ -373,7 +374,7 @@ function ProjectDetails() {
                                         }
                                     >
                                         <img
-                                            src={image}
+                                            src={assetPath(image)}
                                             alt={`${project.title} screenshot ${index + 1}`}
                                         />
                                     </button>
@@ -647,7 +648,7 @@ function ProjectDetails() {
                         ) ? (
                             <video
                                 className="image-viewer-image"
-                                src={currentMedia}
+                                src={assetPath(currentMedia)}
                                 autoPlay
                                 muted
                                 loop
@@ -660,7 +661,7 @@ function ProjectDetails() {
                         ) : (
                             <img
                                 className="image-viewer-image"
-                                src={currentMedia}
+                                src={assetPath(currentMedia)}
                                 alt={
                                     technicalHighlights[
                                         selectedHighlight
