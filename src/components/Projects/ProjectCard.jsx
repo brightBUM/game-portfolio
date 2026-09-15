@@ -19,15 +19,26 @@ function ProjectCard({ project }) {
         }
     };
 
+    const saveScrollPosition = () => {
+        sessionStorage.setItem(
+            "portfolioScrollPosition",
+            window.scrollY.toString()
+        );
+    };
+
     return (
         <Link
             to={`/project/${project.id}`}
             className="project-card"
+            onClick={saveScrollPosition}
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
         >
             <div className="project-media">
-                <img src={project.image} alt={project.title} />
+                <img
+                    src={project.image}
+                    alt={project.title}
+                />
 
                 {project.video && (
                     <video

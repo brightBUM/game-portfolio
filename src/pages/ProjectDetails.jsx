@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import projects from "../data/projects";
 import "./ProjectDetails.css";
 
@@ -8,6 +8,12 @@ function isVideo(file) {
 }
 
 function ProjectDetails() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const { id } = useParams();
 
     const project = projects.find(
@@ -20,7 +26,6 @@ function ProjectDetails() {
     const [selectedHighlight, setSelectedHighlight] =
         useState(null);
 
-    // Which media is currently being shown in each technical card
     const [highlightMediaIndexes, setHighlightMediaIndexes] =
         useState({});
 
@@ -28,17 +33,6 @@ function ProjectDetails() {
     const technicalHighlights =
         project?.technicalHighlights || [];
 
-    /*
-     * Automatically cycle through technical highlight media.
-     *
-     * Each highlight gets its own timer.
-     *
-     * One media:
-     *   media[0] loops normally.
-     *
-     * Multiple media:
-     *   media[0] -> media[1] -> media[2] -> media[0] ...
-     */
     useEffect(() => {
         const timers = [];
 
@@ -217,15 +211,38 @@ function ProjectDetails() {
         );
     }
 
+    const handleBackToProjects = () => {
+        const savedScrollPosition =
+            sessionStorage.getItem(
+                "portfolioScrollPosition"
+            );
+
+        navigate("/");
+
+        if (savedScrollPosition !== null) {
+            const scrollPosition =
+                Number(savedScrollPosition);
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    window.scrollTo(
+                        0,
+                        scrollPosition
+                    );
+                });
+            });
+        }
+    };
+
     return (
         <div className="project-page">
 
-            <Link
-                to="/"
+            <button
                 className="back-button"
+                onClick={handleBackToProjects}
             >
                 ← Back to Projects
-            </Link>
+            </button>
 
             <div className="project-hero">
 
@@ -261,9 +278,7 @@ function ProjectDetails() {
                     <div className="project-tags">
 
                         {project.engine && (
-                            <span>
-                                {project.engine}
-                            </span>
+                            <span>{project.engine}</span>
                         )}
 
                         {project.platforms?.map(
@@ -294,9 +309,7 @@ function ProjectDetails() {
                     {project.contributions?.length > 0 && (
                         <section className="project-section">
 
-                            <h3>
-                                My Contributions
-                            </h3>
+                            <h3>My Contributions</h3>
 
                             <ul className="contribution-list">
 
@@ -322,18 +335,14 @@ function ProjectDetails() {
                 {project.technologies?.length > 0 && (
                     <section className="project-section technologies-section">
 
-                        <h3>
-                            Technologies
-                        </h3>
+                        <h3>Technologies</h3>
 
                         <div className="badge-list">
 
                             {project.technologies.map(
                                 (technology) => (
                                     <span
-                                        key={
-                                            technology
-                                        }
+                                        key={technology}
                                     >
                                         {technology}
                                     </span>
@@ -379,9 +388,7 @@ function ProjectDetails() {
                 {technicalHighlights.length > 0 && (
                     <section className="project-section technical-highlights-section">
 
-                        <h3>
-                            Technical Highlights
-                        </h3>
+                        <h3>Technical Highlights</h3>
 
                         <div className="technical-highlights-grid">
 
