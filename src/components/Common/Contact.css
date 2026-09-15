@@ -1,0 +1,156 @@
+.contact {
+    width: 100%;
+
+    padding: 140px 80px;
+
+    background: #0B1120;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    box-sizing: border-box;
+}
+
+.contact-content {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.contact-kicker {
+    margin-bottom: 18px;
+
+    color: #60A5FA;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.contact-content h2 {
+    margin: 0;
+
+    font-size: clamp(40px, 6vw, 64px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+.contact-description {
+    max-width: 600px;
+
+    margin: 24px auto 0;
+
+    color: #94A3B8;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 38px;
+}
+
+.contact-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #E2E8F0;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+
+    background: #172033;
+
+    border-color: rgba(96, 165, 250, 0.5);
+
+    color: white;
+}
+
+.contact-primary {
+    background: #2563EB;
+
+    border-color: #2563EB;
+
+    color: white;
+}
+
+.contact-primary:hover {
+    background: #1D4ED8;
+
+    border-color: #1D4ED8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .contact {
+        padding: 90px 20px;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-content h2 {
+        font-size: 42px;
+    }
+
+    .contact-description {
+        font-size: 17px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 280px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}
