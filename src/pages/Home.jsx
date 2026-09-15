@@ -1,56 +1,51 @@
-import Navbar from "../components/common/Navbar";
+import Navbar from "../components/Common/Navbar";
 import Hero from "../components/Hero/Hero";
-
 import ProjectSection from "../components/Projects/ProjectSection";
-
-import Skills from "../components/common/Skills";
-import Contact from "../components/common/Contact";
-import Footer from "../components/common/Footer";
+import Skills from "../components/Common/Skills";
+import Contact from "../components/Common/Contact";
+import Footer from "../components/Common/Footer";
 
 function Home() {
-
     return (
-
         <>
-
             <Navbar />
 
-            <Hero />
+            <main>
+                <Hero />
 
-            <ProjectSection
-                title="Commercial Games"
-                subtitle="Games I've contributed to that have been released on Xbox, Android and iOS."
-                section="commercial"
-            />
+                <ProjectSection
+                    title="Commercial Games"
+                    subtitle="Games I've worked on professionally."
+                    section="commercial"
+                />
 
-            <ProjectSection
-                title="Unity Projects"
-                subtitle="Gameplay systems, prototypes and technical experiments."
-                section="unity"
-            />
+                <ProjectSection
+                    title="Unity Projects"
+                    subtitle="Personal projects exploring gameplay systems and Unity development."
+                    section="unity"
+                />
 
-            <ProjectSection
-                title="OpenGL Projects"
-                subtitle="Rendering, physics and graphics programming experiments."
-                section="opengl"
-            />
+                <ProjectSection
+                    title="Graphics Programming"
+                    subtitle="Graphics and rendering projects built with OpenGL and GLSL."
+                    section="opengl"
+                />
 
-            <ProjectSection
-                title="Game Jams"
-                subtitle="Rapid prototypes created during game jams."
-                section="gamejam"
-            />
+                <ProjectSection
+                    title="Game Jams"
+                    subtitle="Rapid prototypes and experimental games built during game jams."
+                    section="gamejam"
+                />
 
-            <Skills />
+                <Skills />
 
-            <Contact />
+                <Contact />
+
+            </main>
 
             <Footer />
-
         </>
-
     );
-
 }
 
 export default Home;
