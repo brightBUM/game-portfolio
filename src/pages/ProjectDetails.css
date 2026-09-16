@@ -1,10 +1,11 @@
 .project-page {
     min-height: 100vh;
-    background: #0B1120;
-    color: white;
+    background: var(--bg-main);
+    color: var(--text-primary);
 }
 
 /* PROJECT NAVBAR */
+
 .back-button {
     position: fixed;
     top: 0;
@@ -17,16 +18,16 @@
     padding: 0 50px;
     box-sizing: border-box;
 
-    color: white;
+    color: var(--text-primary);
     text-decoration: none;
     text-align: left;
     font-family: inherit;
     font-size: 15px;
     font-weight: 600;
 
-    background: rgba(11, 17, 32, 0.78);
+    background: rgba(15, 11, 26, 0.78);
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -39,11 +40,10 @@
 }
 
 .back-button:hover {
-    background: rgba(11, 17, 32, 0.92);
-    color: #60A5FA;
+    background: rgba(15, 11, 26, 0.92);
+    color: var(--accent-light);
 }
 
-/* HERO */
 .project-hero {
     width: 100%;
     height: 70vh;
@@ -59,8 +59,8 @@
     background:
         linear-gradient(
             to bottom,
-            rgba(11, 17, 32, 0) 50%,
-            #0B1120 100%
+            rgba(15, 11, 26, 0) 50%,
+            var(--bg-main) 100%
         );
 }
 
@@ -71,7 +71,6 @@
     object-fit: cover;
 }
 
-/* MAIN CONTENT */
 .project-container {
     max-width: 1200px;
     margin: -80px auto 0;
@@ -80,14 +79,13 @@
     padding: 0 30px 100px;
 }
 
-/* HEADER */
 .project-header {
     margin-bottom: 80px;
 }
 
 .project-kicker {
     margin-bottom: 15px;
-    color: #60A5FA;
+    color: var(--accent-light);
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -96,6 +94,7 @@
 
 .project-header h1 {
     margin: 0;
+    color: var(--text-primary);
     font-size: clamp(48px, 7vw, 76px);
     line-height: 1.05;
     font-weight: 800;
@@ -103,12 +102,11 @@
 
 .project-header h2 {
     margin: 18px 0 0;
-    color: #94A3B8;
+    color: var(--text-muted);
     font-size: 24px;
     font-weight: 400;
 }
 
-/* TAGS */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -118,21 +116,20 @@
 
 .project-tags span {
     padding: 8px 15px;
-    border: 1px solid rgba(96, 165, 250, 0.25);
+    border: 1px solid rgba(192, 132, 252, 0.25);
     border-radius: 999px;
-    background: rgba(37, 99, 235, 0.12);
-    color: #BFDBFE;
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--accent-light);
     font-size: 13px;
 }
 
-/* OVERVIEW */
 .project-overview-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 70px;
     padding-bottom: 80px;
     margin-bottom: 80px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border);
 }
 
 .project-section {
@@ -141,18 +138,18 @@
 
 .project-section h3 {
     margin-bottom: 22px;
+    color: var(--text-primary);
     font-size: 28px;
     font-weight: 700;
 }
 
 .project-section p {
     max-width: 700px;
-    color: #CBD5E1;
+    color: var(--text-secondary);
     font-size: 17px;
     line-height: 1.8;
 }
 
-/* CONTRIBUTIONS */
 .contribution-list {
     display: flex;
     flex-direction: column;
@@ -167,21 +164,20 @@
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.025);
-    color: #CBD5E1;
+    color: var(--text-secondary);
 }
 
 .contribution-list li::before {
     content: "→";
     position: absolute;
     left: 17px;
-    color: #60A5FA;
+    color: var(--accent-light);
 }
 
-/* TECHNOLOGIES */
 .technologies-section {
     padding-bottom: 80px;
     margin-bottom: 80px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border);
 }
 
 .badge-list {
@@ -193,16 +189,15 @@
 .badge-list span {
     padding: 9px 17px;
     border-radius: 999px;
-    background: #1E3A8A;
-    color: white;
+    background: var(--accent-dark);
+    color: var(--text-primary);
     font-size: 13px;
 }
 
-/* GALLERY */
 .gallery-section {
     padding-bottom: 80px;
     margin-bottom: 80px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border);
 }
 
 .gallery {
@@ -226,7 +221,7 @@
     aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     transition:
         transform 0.3s ease,
         border-color 0.3s ease;
@@ -234,14 +229,13 @@
 
 .gallery-image-button:hover img {
     transform: scale(1.03);
-    border-color: rgba(96, 165, 250, 0.6);
+    border-color: var(--border-accent);
 }
 
-/* TECHNICAL HIGHLIGHTS */
 .technical-highlights-section {
     padding-bottom: 80px;
     margin-bottom: 80px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border);
 }
 
 .technical-highlights-grid {
@@ -252,9 +246,9 @@
 
 .technical-highlight-card {
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     border-radius: 16px;
-    background: #111827;
+    background: var(--bg-card);
     transition:
         transform 0.3s ease,
         border-color 0.3s ease,
@@ -263,7 +257,7 @@
 
 .technical-highlight-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(96, 165, 250, 0.45);
+    border-color: var(--border-accent);
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.3);
 }
@@ -275,7 +269,7 @@
     height: 240px;
     padding: 0;
     border: none;
-    background: #020617;
+    background: #080510;
     cursor: pointer;
     overflow: hidden;
 }
@@ -295,8 +289,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(3, 7, 18, 0.45);
-    color: white;
+    background: rgba(3, 2, 8, 0.45);
+    color: var(--text-primary);
     font-size: 14px;
     font-weight: 600;
     opacity: 0;
@@ -314,8 +308,8 @@
     z-index: 2;
     padding: 6px 10px;
     border-radius: 999px;
-    background: rgba(3, 7, 18, 0.8);
-    color: white;
+    background: rgba(3, 2, 8, 0.8);
+    color: var(--text-primary);
     font-size: 12px;
 }
 
@@ -325,17 +319,17 @@
 
 .technical-highlight-content h4 {
     margin: 0 0 12px;
+    color: var(--text-primary);
     font-size: 21px;
 }
 
 .technical-highlight-content p {
     margin: 0;
-    color: #94A3B8;
+    color: var(--text-muted);
     font-size: 15px;
     line-height: 1.7;
 }
 
-/* LINKS */
 .links-section {
     padding-bottom: 30px;
 }
@@ -348,7 +342,7 @@
 
 .project-links a {
     padding: 12px 22px;
-    background: #2563EB;
+    background: var(--accent);
     color: white;
     border-radius: 9px;
     text-decoration: none;
@@ -360,11 +354,12 @@
 }
 
 .project-links a:hover {
-    background: #1D4ED8;
+    background: var(--accent-dark);
     transform: translateY(-3px);
 }
 
-/* IMAGE / MEDIA VIEWER */
+/* IMAGE VIEWER */
+
 .image-viewer {
     position: fixed;
     inset: 0;
@@ -373,7 +368,7 @@
     align-items: center;
     justify-content: center;
     padding: 70px 100px;
-    background: rgba(3, 7, 18, 0.94);
+    background: rgba(5, 2, 12, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -395,10 +390,10 @@
     right: 30px;
     width: 45px;
     height: 45px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--border-strong);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
-    color: white;
+    color: var(--text-primary);
     font-size: 30px;
     line-height: 1;
     cursor: pointer;
@@ -408,7 +403,7 @@
 }
 
 .image-viewer-close:hover {
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(168, 85, 247, 0.35);
     transform: scale(1.05);
 }
 
@@ -418,10 +413,10 @@
     transform: translateY(-50%);
     width: 52px;
     height: 52px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--border-strong);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
-    color: white;
+    color: var(--text-primary);
     font-size: 28px;
     cursor: pointer;
     transition:
@@ -430,7 +425,7 @@
 }
 
 .image-viewer-arrow:hover {
-    background: rgba(37, 99, 235, 0.8);
+    background: rgba(168, 85, 247, 0.8);
 }
 
 .image-viewer-left {
@@ -446,11 +441,10 @@
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    color: #CBD5E1;
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
-/* MOBILE */
 @media (max-width: 800px) {
     .back-button {
         height: 64px;
