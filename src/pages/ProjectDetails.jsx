@@ -572,11 +572,11 @@ function ProjectDetails() {
 
                     <img
                         className="image-viewer-image"
-                        src={
+                        src={assetPath(
                             gallery[
                                 selectedGalleryImage
                             ]
-                        }
+                        )}
                         alt={`${project.title} gallery ${selectedGalleryImage + 1}`}
                         onClick={(event) =>
                             event.stopPropagation()
