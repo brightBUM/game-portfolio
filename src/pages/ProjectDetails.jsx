@@ -447,7 +447,7 @@ function ProjectDetails() {
                                                             currentMedia
                                                         }
                                                         src={
-                                                            currentMedia
+                                                            assetPath(currentMedia)
                                                         }
                                                         autoPlay
                                                         muted
@@ -460,7 +460,7 @@ function ProjectDetails() {
                                                             currentMedia
                                                         }
                                                         src={
-                                                            currentMedia
+                                                            assetPath(currentMedia)
                                                         }
                                                         alt={
                                                             highlight.title
@@ -572,11 +572,11 @@ function ProjectDetails() {
 
                     <img
                         className="image-viewer-image"
-                        src={assetPath(
-                            gallery[
-                                selectedGalleryImage
-                            ]
-                        )}
+                        src={
+                            assetPath(
+                                gallery[selectedGalleryImage]
+                            )
+                        }
                         alt={`${project.title} gallery ${selectedGalleryImage + 1}`}
                         onClick={(event) =>
                             event.stopPropagation()
