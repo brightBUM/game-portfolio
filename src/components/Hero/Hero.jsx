@@ -63,26 +63,6 @@ function Hero() {
                     graphics programming projects,
                     and commercial games.
                 </p>
-
-                <div className="hero-buttons">
-                    <a href="#commercial">
-                        <button className="primary-btn">
-                            View Projects
-                        </button>
-                    </a>
-
-                    <a
-                        href={assetPath(
-                            "/resume/Ram_Manohar_Resume.pdf"
-                        )}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <button className="secondary-btn">
-                            Resume
-                        </button>
-                    </a>
-                </div>
             </div>
         </section>
     );

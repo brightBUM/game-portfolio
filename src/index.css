@@ -1,26 +1,26 @@
 :root {
     /* Backgrounds */
-    --bg-main: #0F0B1A;
-    --bg-section: #120D1F;
-    --bg-card: #181326;
-    --bg-card-hover: #201936;
-    --bg-footer: #0B0813;
+    --bg-main: #121212;
+    --bg-section: #171717;
+    --bg-card: #1E1E1E;
+    --bg-card-hover: #262626;
+    --bg-footer: #0D0D0D;
 
     /* Accent */
-    --accent: #A855F7;
-    --accent-light: #C084FC;
-    --accent-dark: #7E22CE;
+    --accent: #F97316;
+    --accent-light: #FB923C;
+    --accent-dark: #C2410C;
 
     /* Text */
-    --text-primary: #F5F3FF;
-    --text-secondary: #CBD5E1;
-    --text-muted: #A1A1AA;
-    --text-dim: #71717A;
+    --text-primary: #FAFAF9;
+    --text-secondary: #D6D3D1;
+    --text-muted: #A8A29E;
+    --text-dim: #78716C;
 
     /* Borders */
     --border: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.14);
-    --border-accent: rgba(168, 85, 247, 0.45);
+    --border-accent: rgba(249, 115, 22, 0.45);
 }
 
 * {
