@@ -14,7 +14,7 @@ function Home() {
                 <Hero />
 
                 <ProjectSection
-                    title="Commercial Games"
+                    title="Professional Projects"
                     subtitle="Games I've worked on professionally."
                     section="commercial"
                 />

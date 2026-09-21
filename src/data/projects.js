@@ -32,7 +32,7 @@ const projects = [
         `,
 
         image: "/projects/slunkey/1.png",
-        video: "/projects/slunkey/hero.mp4",
+        video: "/projects/slunkey/Clip.mp4",
 
         gallery:[
             "/projects/slunkey/ss1.png",
@@ -104,7 +104,7 @@ const projects = [
 
         image:"/projects/shaolin/1.jpeg",
 
-        video:null,
+        video:"/projects/shaolin/Shaolin vs Wutang 2.mp4",
 
         gallery:[
             "/projects/shaolin/1.jpeg",
@@ -151,7 +151,7 @@ const projects = [
 
         image:"/projects/railrush/1.jpg",
 
-        video:null,
+        video:"/projects/railrush/hero.mp4",
 
         gallery:[
             "/projects/railrush/1.jpg",
@@ -180,27 +180,131 @@ const projects = [
         }
     },
 
+    {
+        id:"Cooking Game",
 
+        featured:true,
+
+        section:"commercial",
+
+        title:"Baby Hazel and Mom's Recipes",
+
+        subtitle:"2D cooking mama style game",
+
+        role:"Lead Programmer",
+
+        engine:"Unity",
+
+        platforms:["Android","Roku"],
+
+        description: "A cooking mama style recipe teaching game for kids ",
+        details : "The game has 15 Recipes , 60 mini games , 3 kitchens maps",
+
+        image:"/projects/cooking/1.jpeg",
+
+        video:null,
+
+        gallery:[
+            "/projects/railrush/1.jpg",
+            "/projects/railrush/rail_1.jpg",
+            "/projects/railrush/rail_3.jpg"
+
+        ],
+
+        technologies:[
+            "Unity",
+            "Photoshop"
+        ],
+
+        contributions:[
+            "Lead Programmer ",
+            "Designed the scriptable object architechture for recipe loading",
+            "Dialogue Systems",
+            "Star Rating and Recipe Unlock Systems",
+            "Overall Game's UI",
+            "Implemented 8 recipes and 30+ mini games"  
+        ],
+        technicalHighlights: [],
+
+        links:{}
+    },
+    {
+        id:"Sol",
+
+        featured:true,
+
+        section:"commercial",
+
+        title:"Sol Project",
+
+        subtitle:"2D Space Survival game",
+
+        role:"Lead Programmer",
+
+        engine:"Unity",
+
+        platforms:["PC Game"],
+
+        description: "Vertical Slice of a 2D Space Survival game ",
+        details : `Sol is a Indie Survivor Game where you have to mine asteroids to get resources 
+        and manage the ship's Fuel,Oxygen and Lasers.Explore different asteroid belts and Star systems . 
+        Trade Resources and sell salvaged parts for different items. Made with Foster Framework and C# . 
+        Worked as a programmer making vertical slice of this game`,
+
+        image:"/projects/sol/sol_1.png",
+
+        video:null,
+
+        gallery:[
+            "/projects/sol/sol_1.png",
+            "/projects/sol/sol_2.png",
+            "/projects/sol/sol_3.png"
+
+        ],
+
+        technologies:[
+            "Foster Framework",
+            "C#",
+            "Aesprite"
+        ],
+
+        contributions:[
+            "Player Ship Mechanics",
+            "Batching system",
+            "GLSL shaders implementation",
+            "FMOD intergration for Audio",
+            "UI Systems"  
+        ],
+        technicalHighlights: [],
+
+        links:{}
+    },
 
     // ======================================================
     // UNITY
     // ======================================================
 
     {
-        id:"topdown",
+        id:"Island",
 
         section:"unity",
 
-        title:"Top Down Shooter",
+        title:"Island Crash",
 
-        subtitle:"Wave Survival",
+        subtitle:"Wave based Survival Game",
 
-        image:"/projects/topdown/1.jpg",
+        image:"/projects/Island Crash/1.gif",
 
-        video:"/projects/topdown/hero.mp4",
+        video:"/projects/Island Crash/IslandCrash_2.mp4",
 
-        description:"Wave based shooter.",
+        description:"Wave based Survival Game",
 
+        details: `A 3D Wave based Survival Game where you defend the 
+        island from incoming pirate ships. RAM as many ships as possible 
+        to fill up the booster bar. 
+        Controls - tap to change clockwise/anti clockwise direction
+        - Hold to use the boost meter.`,
+        
         technologies:["Unity","C#"],
 
         gallery:[],
@@ -210,7 +314,6 @@ const projects = [
         platforms:[],
 
         engine:"Unity",
-
         
     },
 
@@ -225,7 +328,7 @@ const projects = [
 
         image:"/projects/dracosnake/1.png",
 
-        video:null,
+        video:"/projects/dracosnake/DracoSnakeWebGl_Gameplay_30s-compressed.mp4",
 
         description:"A HyperCasual Snake Puzzle.",
 
@@ -261,19 +364,21 @@ const projects = [
     },
 
     {
-        id:"terrainscan",
+        id:"WordDrop",
 
         section:"unity",
 
-        title:"Terrain Scan",
+        title:"WordDrop",
 
-        subtitle:"Shader Experiment",
+        subtitle:"Tetris with words",
 
-        image:"/projects/terrainscan/1.jpg",
+        image:"/projects/worddrop/1.png",
 
-        video:"/projects/terrainscan/hero.mp4",
+        video:"/projects/worddrop/wordDrop_3.mp4",
 
-        description:"Terrain scanning shader mechanic.",
+        description:"Tetris with words",
+
+        details: " ",
 
         technologies:["Unity","Shader Graph"],
 
@@ -291,15 +396,15 @@ const projects = [
 
         section:"unity",
 
-        title:"2.5D Camera",
+        title:"Beat Heat",
 
-        subtitle:"Camera Prototype",
+        subtitle:"Rhythm Game Prototype",
 
-        image:"/projects/2p5d/1.jpg",
+        image:"/projects/beatheat/beatHeat_1.png",
 
-        video:"/projects/2p5d/hero.mp4",
+        video:"/projects/beatheat/beatHeat_3.mp4",
 
-        description:"Perspective camera system.",
+        description:"Rhythm Game Prototype",
 
         technologies:["Unity"],
 
@@ -460,13 +565,13 @@ const projects = [
 
         title:"Croak & Leap",
 
-        subtitle:"Global Game Jam 2025",
+        subtitle:"2D Top Down Puzzle Game",
 
         image:"/projects/croak/1.png",
 
         video:"/projects/croak/hero.mp4",
 
-        description: "2D Top Down Puzzle Game",
+        description: "Global Game Jam 2025",
 
         details:`Meet Freddy the Frog, the world’s most unusual amphibian. He’s got the hops, he’s got the tongue… but swimming? Nope, not Freddy’s forte. Poor Freddy finds himself stranded on one side of a bubbling, tricky river with no way to swim across. But don’t worry—he’s got a secret weapon: his mighty CROAK!
 
@@ -501,13 +606,13 @@ const projects = [
 
         title:"Project V1",
 
-        subtitle:" WTF x IGDC Jam 2024",
+        subtitle:"2D Top Down Stealth Game ",
 
         image:"/projects/projectv1/1.jpg",
 
         video:"/projects/projectv1/hero.mp4",
 
-        description:"2D Top Down Stealth Game",
+        description:"WTF x IGDC Jam 2024",
 
         details:`A Virus gets planted in a computer system and travels through different parts 
         of the computer to corrupt the system while running away from the antivirus.
@@ -539,13 +644,13 @@ const projects = [
 
         title:"Hatrix",
 
-        subtitle:"BYOG Game Jam 2024",
+        subtitle:"A 3D puzzle platformer set in space",
 
         image:"/projects/hatrix/1.png",
 
         video:"/projects/hatrix/hero.mov",
 
-        description:"A 3D puzzle platformer set in space",
+        description:"BYOG Game Jam 2024",
 
         details :`A 3D puzzle-solving platformer set in space, where players help Hatrix navigate 
         through challenging environments using three unique helmets—each with special abilities: 

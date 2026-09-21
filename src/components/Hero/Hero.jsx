@@ -9,8 +9,10 @@ const heroVideos = [
     "/projects/elastic/collision.mp4",
     "/projects/texturescroll/uv scroll ball.mp4",
     "/projects/croak/hero.mp4",
-    "/projects/projectv1/hero.mp4",
-    "/projects/hatrix/hero.mov"
+    "/projects/dracosnake/DracoSnakeWebGl_Gameplay_30s-compressed.mp4",
+    "/projects/hatrix/hero.mov",
+    "/projects/beatheat/beatHeat_3.mp4",
+    "/projects/Island Crash/IslandCrash_2.mp4"
 ];
 
 function Hero() {
