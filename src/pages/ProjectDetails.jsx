@@ -247,7 +247,12 @@ function ProjectDetails() {
 
             <div className="project-hero">
 
-                {project.video ? (
+                {project.heroImage ? (
+                    <img
+                        src={assetPath(project.heroImage)}
+                        alt={project.title}
+                    />
+                ) : project.video ? (
                     <video
                         src={assetPath(project.video)}
                         autoPlay

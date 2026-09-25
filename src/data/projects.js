@@ -151,7 +151,10 @@ const projects = [
 
         video:"/projects/railrush/hero.mp4",
 
+        heroImage: "/projects/railrush/1.jpg",
+
         gallery:[
+            "/projects/railrush/hero.mp4",
             "/projects/railrush/1.jpg",
             "/projects/railrush/rail_1.jpg",
             "/projects/railrush/rail_3.jpg"
@@ -370,7 +373,7 @@ const projects = [
 
         subtitle:"Tetris with words",
 
-        image:"/projects/worddrop/1.png",
+        image:"/projects/worddrop/wordDrop_title.png",
 
         video:"/projects/worddrop/wordDrop_3.mp4",
 
@@ -380,7 +383,11 @@ const projects = [
 
         technologies:["Unity","Shader Graph"],
 
-        gallery:[],
+        gallery:[
+            "/projects/worddrop/wordDrop_3.mp4",
+            "/projects/worddrop/1.png",
+            "/projects/worddrop/wordDrop_title.png",
+        ],
 
         contributions:[],
 
