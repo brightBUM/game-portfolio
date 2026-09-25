@@ -213,9 +213,11 @@
     cursor: pointer;
     overflow: hidden;
     border-radius: 14px;
+    display: block;
 }
 
-.gallery img {
+.gallery img,
+.gallery video {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
@@ -227,7 +229,8 @@
         border-color 0.3s ease;
 }
 
-.gallery-image-button:hover img {
+.gallery-image-button:hover img,
+.gallery-image-button:hover video {
     transform: scale(1.03);
     border-color: var(--border-accent);
 }
@@ -358,7 +361,7 @@
     transform: translateY(-3px);
 }
 
-/* IMAGE VIEWER */
+/* IMAGE / VIDEO VIEWER */
 
 .image-viewer {
     position: fixed;

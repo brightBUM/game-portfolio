@@ -363,7 +363,7 @@ function ProjectDetails() {
                         <div className="gallery">
 
                             {gallery.map(
-                                (image, index) => (
+                                (media, index) => (
                                     <button
                                         key={index}
                                         className="gallery-image-button"
@@ -372,11 +372,24 @@ function ProjectDetails() {
                                                 index
                                             )
                                         }
+                                        aria-label={`Preview ${project.title} media ${index + 1}`}
                                     >
-                                        <img
-                                            src={assetPath(image)}
-                                            alt={`${project.title} screenshot ${index + 1}`}
-                                        />
+
+                                        {isVideo(media) ? (
+                                            <video
+                                                src={assetPath(media)}
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                            />
+                                        ) : (
+                                            <img
+                                                src={assetPath(media)}
+                                                alt={`${project.title} gallery ${index + 1}`}
+                                            />
+                                        )}
+
                                     </button>
                                 )
                             )}
@@ -446,9 +459,9 @@ function ProjectDetails() {
                                                         key={
                                                             currentMedia
                                                         }
-                                                        src={
-                                                            assetPath(currentMedia)
-                                                        }
+                                                        src={assetPath(
+                                                            currentMedia
+                                                        )}
                                                         autoPlay
                                                         muted
                                                         loop
@@ -459,9 +472,9 @@ function ProjectDetails() {
                                                         key={
                                                             currentMedia
                                                         }
-                                                        src={
-                                                            assetPath(currentMedia)
-                                                        }
+                                                        src={assetPath(
+                                                            currentMedia
+                                                        )}
                                                         alt={
                                                             highlight.title
                                                         }
@@ -570,18 +583,42 @@ function ProjectDetails() {
                         ←
                     </button>
 
-                    <img
-                        className="image-viewer-image"
-                        src={
-                            assetPath(
-                                gallery[selectedGalleryImage]
-                            )
-                        }
-                        alt={`${project.title} gallery ${selectedGalleryImage + 1}`}
-                        onClick={(event) =>
-                            event.stopPropagation()
-                        }
-                    />
+                    {(() => {
+                        const currentMedia =
+                            gallery[
+                                selectedGalleryImage
+                            ];
+
+                        return isVideo(
+                            currentMedia
+                        ) ? (
+                            <video
+                                className="image-viewer-image"
+                                src={assetPath(
+                                    currentMedia
+                                )}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                controls
+                                onClick={(event) =>
+                                    event.stopPropagation()
+                                }
+                            />
+                        ) : (
+                            <img
+                                className="image-viewer-image"
+                                src={assetPath(
+                                    currentMedia
+                                )}
+                                alt={`${project.title} gallery ${selectedGalleryImage + 1}`}
+                                onClick={(event) =>
+                                    event.stopPropagation()
+                                }
+                            />
+                        );
+                    })()}
 
                     <button
                         className="image-viewer-arrow image-viewer-right"
@@ -648,7 +685,9 @@ function ProjectDetails() {
                         ) ? (
                             <video
                                 className="image-viewer-image"
-                                src={assetPath(currentMedia)}
+                                src={assetPath(
+                                    currentMedia
+                                )}
                                 autoPlay
                                 muted
                                 loop
@@ -661,7 +700,9 @@ function ProjectDetails() {
                         ) : (
                             <img
                                 className="image-viewer-image"
-                                src={assetPath(currentMedia)}
+                                src={assetPath(
+                                    currentMedia
+                                )}
                                 alt={
                                     technicalHighlights[
                                         selectedHighlight

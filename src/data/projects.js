@@ -26,15 +26,13 @@ const projects = [
 
             The project focused on creating responsive physics-based movement,
             level progression, and gameplay systems.
-
-            More detailed information about the mechanics, implementation,
-            challenges, and my contributions can go here.
         `,
 
         image: "/projects/slunkey/1.png",
         video: "/projects/slunkey/Clip.mp4",
 
         gallery:[
+            "/projects/slunkey/hero.mp4",
             "/projects/slunkey/ss1.png",
             "/projects/slunkey/ss3.png",
             "/projects/slunkey/Shop.png"
