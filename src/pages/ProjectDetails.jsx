@@ -273,29 +273,65 @@ function ProjectDetails() {
 
                 <header className="project-header">
 
-                    <p className="project-kicker">
-                        {project.section}
-                    </p>
+                    <div className="project-header-info">
 
-                    <h1>{project.title}</h1>
+                        <p className="project-kicker">
+                            {project.section}
+                        </p>
 
-                    <h2>{project.subtitle}</h2>
+                        <h1>{project.title}</h1>
 
-                    <div className="project-tags">
+                        <h2>{project.subtitle}</h2>
 
-                        {project.engine && (
-                            <span>{project.engine}</span>
-                        )}
+                        <div className="project-tags">
 
-                        {project.platforms?.map(
-                            (platform) => (
-                                <span key={platform}>
-                                    {platform}
+                            {project.engine && (
+                                <span>
+                                    {project.engine}
                                 </span>
-                            )
-                        )}
+                            )}
+
+                            {project.platforms?.map(
+                                (platform) => (
+                                    <span key={platform}>
+                                        {platform}
+                                    </span>
+                                )
+                            )}
+
+                        </div>
 
                     </div>
+
+                    {project.links &&
+                        Object.keys(project.links).length >
+                            0 && (
+                            <div className="project-header-links">
+
+                                <h3>Links</h3>
+
+                                <div className="project-links">
+
+                                    {Object.entries(
+                                        project.links
+                                    ).map(
+                                        ([name, url]) =>
+                                            url && (
+                                                <a
+                                                    key={name}
+                                                    href={url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {name}
+                                                </a>
+                                            )
+                                    )}
+
+                                </div>
+
+                            </div>
+                        )}
 
                 </header>
 
@@ -526,37 +562,6 @@ function ProjectDetails() {
                     </section>
                 )}
 
-                {project.links &&
-                    Object.keys(
-                        project.links
-                    ).length > 0 && (
-                        <section className="project-section links-section">
-
-                            <h3>Links</h3>
-
-                            <div className="project-links">
-
-                                {Object.entries(
-                                    project.links
-                                ).map(
-                                    ([name, url]) =>
-                                        url && (
-                                            <a
-                                                key={name}
-                                                href={url}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >
-                                                {name}
-                                            </a>
-                                        )
-                                )}
-
-                            </div>
-
-                        </section>
-                    )}
-
             </main>
 
             {/* GALLERY VIEWER */}
@@ -564,9 +569,7 @@ function ProjectDetails() {
             {selectedGalleryImage !== null && (
                 <div
                     className="image-viewer"
-                    onClick={
-                        closeGalleryViewer
-                    }
+                    onClick={closeGalleryViewer}
                 >
 
                     <button
@@ -590,18 +593,12 @@ function ProjectDetails() {
 
                     {(() => {
                         const currentMedia =
-                            gallery[
-                                selectedGalleryImage
-                            ];
+                            gallery[selectedGalleryImage];
 
-                        return isVideo(
-                            currentMedia
-                        ) ? (
+                        return isVideo(currentMedia) ? (
                             <video
                                 className="image-viewer-image"
-                                src={assetPath(
-                                    currentMedia
-                                )}
+                                src={assetPath(currentMedia)}
                                 autoPlay
                                 muted
                                 loop
@@ -614,9 +611,7 @@ function ProjectDetails() {
                         ) : (
                             <img
                                 className="image-viewer-image"
-                                src={assetPath(
-                                    currentMedia
-                                )}
+                                src={assetPath(currentMedia)}
                                 alt={`${project.title} gallery ${selectedGalleryImage + 1}`}
                                 onClick={(event) =>
                                     event.stopPropagation()
