@@ -3,14 +3,17 @@ import "./Hero.css";
 import assetPath from "../../utils/assetPath";
 
 const heroVideos = [
-    "/projects/slunkey/hero.mp4",
+    "/projects/hatrix/hatrix showcase.mp4",
+    "/projects/shaolin/Shaolin vs Wutang 2.mp4",
+    "/projects/cooking/baby hazel showcase.mp4",
     "/projects/bezier curve/Bezier curve.mp4",
+    "/projects/dracosnake/DracoSnakeWebGl_Gameplay_30s-compressed.mp4",
+    "/projects/slunkey/hero.mp4",
     "/projects/beziersurface/hero.mp4",
+    "/projects/croak/hero.mp4",
     "/projects/elastic/collision.mp4",
     "/projects/texturescroll/uv scroll ball.mp4",
-    "/projects/croak/hero.mp4",
-    "/projects/projectv1/hero.mp4",
-    "/projects/hatrix/hero.mov"
+    "/projects/Island Crash/IslandCrash_2.mp4"
 ];
 
 const nameText = "Ram Manohar";
