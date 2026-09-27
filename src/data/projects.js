@@ -35,7 +35,10 @@ const projects = [
             "/projects/slunkey/hero.mp4",
             "/projects/slunkey/ss1.png",
             "/projects/slunkey/ss3.png",
-            "/projects/slunkey/Shop.png"
+            "/projects/slunkey/Shop.png",
+            "/projects/slunkey/scoreboard.png",
+            "/projects/slunkey/ss_6.jpeg",
+            "/projects/slunkey/ss_5.jpeg"
         ],
 
         technologies:[
@@ -190,7 +193,7 @@ const projects = [
 
         title:"Baby Hazel and Mom's Recipes",
 
-        subtitle:"2D cooking mama style game",
+        subtitle:"2D Cooking Mama-style game",
 
         role:"Lead Programmer",
 
@@ -198,17 +201,22 @@ const projects = [
 
         platforms:["Android","Roku"],
 
-        description: "A cooking mama style recipe teaching game for kids ",
-        details : "The game has 15 Recipes , 60 mini games , 3 kitchens maps",
+        description: "2D Cooking Mama-style game",
+        details : `2D "Cooking Mama" style cooking game focused on learning recipes through 
+        interactive mini-games. The game features 3 kitchen maps, 15 recipes, and 60 cooking mini-games, 
+        with each recipe broken down into a series of interactive steps. 
+        Players learn the cooking process by completing mini-games for tasks such as 
+        preparing ingredients, cooking, and assembling dishes.`,
 
-        image:"/projects/cooking/1.jpeg",
+        image: "/projects/cooking/1.jpeg",
 
-        video:null,
-
+        video: "/projects/cooking/baby hazel showcase.mp4",
+        heroImage: "/projects/cooking/1.jpeg",
         gallery:[
-            "/projects/railrush/1.jpg",
-            "/projects/railrush/rail_1.jpg",
-            "/projects/railrush/rail_3.jpg"
+            "/projects/cooking/baby hazel showcase.mp4",
+            "/projects/cooking/kitchen_1.png",
+            "/projects/cooking/omelette.png",
+            "/projects/cooking/pizza.png"
 
         ],
 
@@ -244,7 +252,7 @@ const projects = [
 
         engine:"Unity",
 
-        platforms:["PC Game"],
+        platforms:["Windows"],
 
         description: "Vertical Slice of a 2D Space Survival game ",
         details : `Sol is a Indie Survivor Game where you have to mine asteroids to get resources 
@@ -254,7 +262,7 @@ const projects = [
 
         image:"/projects/sol/sol_1.png",
 
-        video:null,
+        video:"/projects/sol/Sol Demo.mp4",
 
         gallery:[
             "/projects/sol/sol_1.png",
@@ -278,7 +286,7 @@ const projects = [
         ],
         technicalHighlights: [],
 
-        links:{}
+        links:{Foster:"https://github.com/FosterFramework/Foster"}
     },
 
     // ======================================================
@@ -312,7 +320,7 @@ const projects = [
 
         contributions:[],
 
-        platforms:[],
+        platforms:["Android"],
 
         engine:"Unity",
         
@@ -355,7 +363,7 @@ const projects = [
 
         contributions:[],
 
-        platforms:["Android"],
+        platforms:["Android","WebGL"],
 
         engine:"Unity",
       
@@ -379,9 +387,12 @@ const projects = [
 
         description:"Tetris with words",
 
-        details: " ",
+        details: `A Tetris-inspired word puzzle game where falling letter blocks replace 
+        traditional shapes. Players tap letters to form valid words, clearing them from the grid
+         and creating space for more letters. The goal is to make as many words as possible 
+         while continuously clearing the grid and preventing the stack from reaching the top. `,
 
-        technologies:["Unity","Shader Graph"],
+        technologies:["Unity"],
 
         gallery:[
             "/projects/worddrop/wordDrop_3.mp4",
@@ -391,7 +402,7 @@ const projects = [
 
         contributions:[],
 
-        platforms:[],
+        platforms:["Android"],
 
         engine:"Unity"
     },
@@ -417,7 +428,7 @@ const projects = [
 
         contributions:[],
 
-        platforms:[],
+        platforms:["Android"],
 
         engine:"Unity"
     },
@@ -653,7 +664,7 @@ const projects = [
 
         image:"/projects/hatrix/1.png",
 
-        video:"/projects/hatrix/hero.mov",
+        video:"/projects/hatrix/hatrix showcase.mp4",
 
         description:"BYOG Game Jam 2024",
 
