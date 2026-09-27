@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap");
+
 .hero {
     position: relative;
     width: 100%;
@@ -7,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Sora", sans-serif;
 }
 
 .hero-video {
@@ -21,47 +24,159 @@
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(3, 2, 8, 0.65);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 5, 5, 0.35) 0%,
+            rgba(5, 5, 5, 0.55) 55%,
+            rgba(5, 5, 5, 0.88) 100%
+        );
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
     width: calc(100% - 40px);
-    max-width: 900px;
+    max-width: 1100px;
     text-align: center;
 }
 
-.hero-small {
-    color: var(--text-muted);
-    font-size: 22px;
-    margin-bottom: 15px;
+/* NAME */
+
+.hero-name {
+    width: 100%;
+    height: 114px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -5px;
+    white-space: nowrap;
+    text-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.55);
 }
 
-.hero h1 {
-    color: var(--text-primary);
-    font-size: 82px;
-    margin-bottom: 10px;
-}
+/* ROLE */
 
-.hero h2 {
+.hero-role {
+    height: 45px;
+    margin-top: 26px;
     color: var(--accent-light);
-    font-size: 34px;
+    font-size: clamp(20px, 2.4vw, 30px);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.5;
+    white-space: nowrap;
 }
+
+/* DESCRIPTION */
 
 .hero-description {
-    margin-top: 30px;
+    min-height: 72px;
+    max-width: 760px;
+    margin: 32px auto 0;
     color: var(--text-secondary);
-    font-size: 22px;
+    font-size: clamp(16px, 1.5vw, 20px);
     line-height: 1.8;
+    font-weight: 400;
+}
+.description-word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 0.28em;
 }
 
-.hero-buttons {
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+.description-letter {
+    display: inline-block;
+    opacity: 0;
+    animation:
+        descriptionLetterPop 0.55s ease-out forwards;
+
+    animation-delay: calc(
+        0.05s + var(--letter-index) * 0.022s
+    );
 }
+/* LETTER ANIMATION */
+
+.type-letter,
+.role-letter,
+.description-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: dialogueLetter 0.4s ease-out forwards;
+}
+
+.type-letter {
+    animation-delay: calc(
+        0.05s + var(--letter-index) * 0.07s
+    );
+}
+
+.role-letter {
+    animation-delay: calc(
+        0.05s + var(--letter-index) * 0.01s
+    );
+}
+
+.description-letter {
+    animation:
+        descriptionLetterPop 0.55s ease-out forwards;
+
+    animation-delay: calc(
+        0.05s + var(--letter-index) * 0.015s
+    );
+}
+
+@keyframes dialogueLetter {
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(1.08);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes descriptionLetterPop {
+    0% {
+        opacity: 0;
+        transform: translateY(14px) scale(1.15);
+
+        color: hsl(
+            calc(var(--letter-index) * 17),
+            90%,
+            65%
+        );
+    }
+
+    45% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1);
+
+        color: hsl(
+            calc(var(--letter-index) * 17),
+            90%,
+            65%
+        );
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+        color: var(--text-secondary);
+    }
+}
+
+/* MOBILE */
 
 @media (max-width: 800px) {
     .hero {
@@ -69,36 +184,52 @@
     }
 
     .hero-content {
-        width: calc(100% - 40px);
-        max-width: 600px;
+        width: calc(100% - 30px);
     }
 
-    .hero-small {
-        font-size: 16px;
-        margin-bottom: 12px;
+    .hero-name {
+        height: 65px;
+        font-size: clamp(42px, 13vw, 68px);
+        line-height: 1;
+        letter-spacing: -3px;
+        white-space: nowrap;
     }
 
-    .hero h1 {
-        font-size: clamp(42px, 12vw, 58px);
-        line-height: 1.05;
-        margin-bottom: 12px;
-    }
-
-    .hero h2 {
-        font-size: 23px;
-        line-height: 1.3;
+    .hero-role {
+        height: 54px;
+        margin-top: 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        white-space: normal;
     }
 
     .hero-description {
-        margin-top: 22px;
-        font-size: 16px;
+        min-height: 82px;
+        margin-top: 24px;
+        font-size: 15px;
         line-height: 1.7;
     }
+}
 
-    .hero-buttons {
-        margin-top: 30px;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+@media (max-width: 430px) {
+    .hero-name {
+        height: 58px;
+        font-size: 42px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-role {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-name {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .hero-role {
+        font-size: 15px;
     }
 }

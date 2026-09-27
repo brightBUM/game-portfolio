@@ -7,18 +7,24 @@ const heroVideos = [
     "/projects/bezier curve/Bezier curve.mp4",
     "/projects/beziersurface/hero.mp4",
     "/projects/elastic/collision.mp4",
-    "/projects/shaolin/Shaolin vs Wutang 2.mp4",
-    "/projects/cooking/baby hazel showcase.mp4",
     "/projects/texturescroll/uv scroll ball.mp4",
     "/projects/croak/hero.mp4",
-    "/projects/dracosnake/DracoSnakeWebGl_Gameplay_30s-compressed.mp4",
-    "/projects/hatrix/hero.mov",
-    "/projects/Island Crash/IslandCrash_2.mp4"
+    "/projects/projectv1/hero.mp4",
+    "/projects/hatrix/hero.mov"
 ];
+
+const nameText = "Ram Manohar";
+const roleText = "Game Programmer | Unity Developer";
+const descriptionText =
+    "I build polished gameplay systems, graphics programming projects, and commercial games.";
 
 function Hero() {
     const videoRef = useRef(null);
+
     const [currentVideo, setCurrentVideo] = useState(0);
+    const [showName, setShowName] = useState(false);
+    const [showRole, setShowRole] = useState(false);
+    const [showDescription, setShowDescription] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -36,6 +42,26 @@ function Hero() {
         videoRef.current.currentTime = 0;
         videoRef.current.play().catch(() => {});
     }, [currentVideo]);
+
+    useEffect(() => {
+        const nameTimer = setTimeout(() => {
+            setShowName(true);
+        }, 300);
+
+        const roleTimer = setTimeout(() => {
+            setShowRole(true);
+        }, 1000);
+
+        const descriptionTimer = setTimeout(() => {
+            setShowDescription(true);
+        }, 1900);
+
+        return () => {
+            clearTimeout(nameTimer);
+            clearTimeout(roleTimer);
+            clearTimeout(descriptionTimer);
+        };
+    }, []);
 
     return (
         <section className="hero">
@@ -55,17 +81,87 @@ function Hero() {
             <div className="hero-overlay"></div>
 
             <div className="hero-content">
-                <p className="hero-small">👋 Hi, I'm</p>
 
-                <h1>Ram Manohar</h1>
+                <h1 className="hero-name">
+                    {showName &&
+                        nameText.split("").map((char, index) => (
+                            <span
+                                key={index}
+                                className="type-letter"
+                                style={{
+                                    "--letter-index": index
+                                }}
+                            >
+                                {char === " "
+                                    ? "\u00A0"
+                                    : char}
+                            </span>
+                        ))}
+                </h1>
 
-                <h2>Game Programmer</h2>
+                <div className="hero-role">
+                    {showRole &&
+                        roleText.split("").map((char, index) => (
+                            <span
+                                key={index}
+                                className="role-letter"
+                                style={{
+                                    "--letter-index": index
+                                }}
+                            >
+                                {char === " "
+                                    ? "\u00A0"
+                                    : char}
+                            </span>
+                        ))}
+                </div>
 
                 <p className="hero-description">
-                    I build polished gameplay systems,
-                    graphics programming projects,
-                    and commercial games.
+                    {showDescription &&
+                        descriptionText
+                            .split(" ")
+                            .map((word, wordIndex) => (
+                                <span
+                                    key={wordIndex}
+                                    className="description-word"
+                                >
+                                    {word.split("").map(
+                                        (char, charIndex) => {
+                                            const letterIndex =
+                                                descriptionText
+                                                    .split("")
+                                                    .slice(
+                                                        0,
+                                                        descriptionText
+                                                            .split(" ")
+                                                            .slice(
+                                                                0,
+                                                                wordIndex
+                                                            )
+                                                            .join(" ")
+                                                            .length
+                                                    ).length +
+                                                wordIndex +
+                                                charIndex;
+
+                                            return (
+                                                <span
+                                                    key={charIndex}
+                                                    className="description-letter"
+                                                    style={{
+                                                        "--letter-index":
+                                                            letterIndex
+                                                    }}
+                                                >
+                                                    {char}
+                                                </span>
+                                            );
+                                        }
+                                    )}
+                                </span>
+                            ))}
                 </p>
+
             </div>
         </section>
     );

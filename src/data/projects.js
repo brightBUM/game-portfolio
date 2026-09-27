@@ -547,7 +547,7 @@ const projects = [
 
         section:"opengl",
 
-        title:"Fake 2D Roll",
+        title:"8 Ball Roll Recreate",
 
         subtitle:"Faking 2D roll by scrolling UV",
 
